@@ -1,6 +1,7 @@
 <template>
   <header>
     <input type="number" id="rows" v-model="row" />
+     * 
     <input type="number" v-model="column" />
     <button @click="startGame()">start</button>
   </header>
@@ -195,7 +196,7 @@ header {
   background-color: #e6e7ee !important;
   background-clip: padding-box !important;
   border: 0.0625rem solid #d1d9e6 !important;
-  /* height: 40px; */
+  flex-wrap: wrap;
   padding: 20px;
 }
 
@@ -214,6 +215,8 @@ input {
   box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff ;
   transition: all 0.3s ease-in-out ;
   outline: none;
+   width: 90px;
+  margin:10px
 }
 
 td {
@@ -244,8 +247,18 @@ tr {
   justify-content: center;
   align-items: center;
   padding-top: 30px;
+  overflow-x: scroll;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main-board::-webkit-scrollbar {
+    display: none;
 }
 
+/* Hide scrollbar for IE, Edge and Firefox */
+.main-board {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 table {
   border-collapse: separate;
   border-spacing: 10px;
